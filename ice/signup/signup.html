@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Feed Sign Up</title>
+
+    <style>
+        /* "*" is applied to everything */
+        * {
+            margin: 0;
+        }
+
+        body {
+            background: rgb(120, 96, 64);
+        }
+
+        #formContainer {
+            margin: auto;
+            margin-top: 20px;
+            text-align: center;
+            width: 500px;
+            height: 700px;
+            border: 8px solid blue;
+            border-radius: 20px;
+            
+        }
+
+        #myForm {
+            display: grid;
+            background: white;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: repeat(7, 1fr);
+            gap: 10px;
+            padding: 10px;
+        }
+
+        #title {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(5, 50px);
+        }
+
+        #scriptures {
+            background: white;
+            padding-top: 20px;
+            height: 22.5%;
+        }
+
+        img {
+            width: 19%;
+            height: auto;
+        }
+        
+        #jesusimg {
+            width: 500px;
+            height: 250px;
+            grid-area: 1 / 1 / 2 / 6;
+            z-index: -1;
+        }
+
+        h3 {
+            background: white;
+            padding: 10px;
+        }
+
+        h1 {
+            color: white;
+            text-shadow: 2px 2px black;
+            grid-area: 3 / 1 / 4 / 2;
+        }
+
+        h2 {
+            color: white;
+            text-shadow: 2px 2px black;
+            grid-area: 4 / 1 / 5 / 2;
+        }
+
+        #closeBtn {
+            width: 30px;
+            height: 30px;
+            grid-area: 1 / 1 / 2 / 2;
+            margin-top: 10px;
+            margin-left: 10px;
+        }
+
+        #usernameLabel {
+            grid-area: 1 / 1 / 2 / 2;
+        }
+
+        #username {
+            grid-area: 1 / 2 / 2 / 3;
+        }
+
+        #newsletterSection {
+            grid-area: 5 / 1 / 6 / 3;
+        }
+
+        #conditionSection {
+            grid-area: 6 / 1 / 7 / 3;
+        }
+
+        #submitBtn {
+            grid-area: 7 / 1 / 8 / 3;
+        }
+
+    </style>
+
+
+
+
+</head>
+
+<body>
+    <div id="formContainer">
+        <div id="title">
+            <img src="images/jesus_feeds_5000.jpeg" alt="Jesus Picture" id="jesusimg">
+            <button type="button" id="closeBtn">X</button>
+            <h1>Daily Feed</h1>
+            <h2>Scripture a Day</h2>
+        </div>
+        <h3>Sign Up for Daily Scripture Feed</h3>
+        <form id="myForm">
+            <label for="username" id="usernameLabel">User Name:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password" id="passwordLabel">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="email" id-="emailLabel">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label id="gender">Gender:</label>
+            <div>
+                <input type="radio" id="male" name="gender" value="male" required>
+                <label for="male">Male</label>
+                <input type="radio" id="female" name="gender" value="female" required>
+                <label for="female">Female</label>
+            </div>
+
+            <section id="newsletterSection">
+                <input type="checkbox" id="newsletter" name="newsletter">
+                <label for="newsletter">Subscribe to newsletter</label>
+            </section>
+
+            <section id="conditionSection">
+                <input type="checkbox" id="conditions" name="conditions" required>
+                <label for="conditions">I acknowledge the terms and conditions</label>
+            </section>
+
+            <section id="submitBtn">
+                <button type="submit">Submit</button>
+            </section>
+        </form>
+        <div id="scriptures">
+            <img src="images/old_testament.webp" alt="Old Testament">
+            <img src="images/new_testament.webp" alt="New Testament">
+            <img src="images/book_of_mormon.webp" alt="Book of Mormon">
+            <img src="images/doctrine_and_covenants.webp" alt="Doctrine and Covenants">
+            <img src="images/pearl_of_great_price.webp" alt="Pearl of Great Price">
+        </div>
+    </div>
+
+    <div id="output"></div>
+
+    <script>
+        // Here is some Javascript to start looking forward to wdd131
+        document.getElementById("closeBtn").addEventListener("click", function () {
+            document.getElementById("formContainer").style.display = "none";
+         });
+        const form = document.getElementById('myForm');
+        const output = document.getElementById('output');
+
+        form.addEventListener('submit', function (event) {
+            event.preventDefault(); // Stop form from actually submitting
+
+            const formData = new FormData(form);
+            const entries = [];
+
+            for (const [key, value] of formData.entries()) {
+                if (key == "password") {
+                    entries.push(`<strong>${key}</strong>: ${value} (you should probably encrypt the password)`);
+                } else {
+                    entries.push(`<strong>${key}</strong>: ${value}`);
+                }
+            }
+
+            output.innerHTML = `
+            <br>  
+            <h3>Here is the data that would be sent to the server:</h3>
+            <ul>
+                ${entries.map(item => `<li>${item}</li>`).join('')}
+            </ul>
+            `;
+                });
+    </script>
+
+</body>
+
+</html>

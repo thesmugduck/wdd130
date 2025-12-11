@@ -1,0 +1,179 @@
+
+
+/* colors: 001B2E, 294C60, ADB6C4, FFEFD3, FFC49B */
+/* black,blue,grey,yellow,orange  */
+
+img.logo {
+    width: 120px;
+    height: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#wrapper {
+    text-align: center;
+    background-color: #ADB6C4;
+}
+
+nav {
+    height: 120px;
+    background: #294C60;
+    display: flex;
+    justify-content: space-around;
+    font-size: 2em;
+}
+
+nav a {
+    color: #FFC49B;
+    text-align: center;
+    text-decoration: none;
+    padding: 35px;
+    padding-top: 40px;
+}
+
+nav a:hover {
+    color: #FFEFD3;
+}
+
+td, th {
+    border: 2px solid #001B2E;
+}
+
+table {
+    border: 2px solid #001B2E;
+    border-collapse: collapse;
+}
+
+#submit {
+    margin: 10px;
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px;
+    margin: 10px;
+    height: 800px;
+}
+
+#text {
+    background: #FFC49B;
+    color: #001B2E;
+    grid-area: 1 / 1 / 3 / 3;
+    padding: 20px;
+    border: 4px solid #FFEFD3;
+}
+
+#form {
+    background: #FFC49B;
+    color: #001B2E;
+    grid-area: 1 / 3 / 2 / 4;
+    padding: 20px;
+    border: 4px solid #FFEFD3;
+}
+
+#table {
+    background: #FFC49B;
+    color: #001B2E;
+    grid-area: 2 / 3 / 4 / 4;
+    padding: 20px;
+    border: 4px solid #FFEFD3;
+}
+
+#img1border {
+    background: #FFC49B;
+    padding: 20px;
+    border: 4px solid #FFEFD3;
+}
+
+#img2border {
+    background: #FFC49B;
+    padding: 20px;
+    border: 4px solid #FFEFD3;
+}
+
+#img1 {
+    width: 300px;
+}
+
+#img2 {
+    width: 400px;
+}
+
+footer {
+    height: 70px;
+    background: #294C60;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 45px;
+    color: #FFC49B;
+    font-size: 1.2em;
+}
+
+footer a {
+    color: #FFC49B;
+    text-align: center;
+}
+
+footer a:hover {
+    color: #FFEFD3;
+}
+
+
+/* ICE CSS BELOW */
+
+
+
+#ice1 {
+    grid-area: 1 / 1 / 2 / 2;
+    background-color: #FFC49B;
+    padding: 50px;
+}
+
+#ice2 {
+    background-color: #FFC49B;
+    padding: 50px;
+}
+
+#ice3 {
+    background-color: #FFC49B;
+    padding: 50px;
+}
+
+#ice4 {
+    background-color: #FFC49B;
+    padding: 50px;
+}
+
+#ice5 {
+    background-color: #FFC49B;
+    padding: 50px;
+}
+
+#ice6 {
+    background-color: #FFC49B;
+    padding: 50px;
+}
+
+#ice7 {
+    background-color: #FFC49B;
+    padding: 50px;
+}
+
+#ice8 {
+    background-color: #FFC49B;
+    padding: 50px;
+}
+
+main a {
+    text-decoration: none;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', sans-serif;
+    font-size: 1.5em;
+    color: #001B2E;
+}
+
+main a:hover {
+    color: #294C60;
+}
+
