@@ -13,11 +13,11 @@
 <body>
     <div id="wrapper">
         <header>
-            <nav id="nav">
+            <nav>
                 <img class="logo" src="images/ak_logo.png" alt="AK Logo">
                 <a href="index.html">Home</a>
-                <a href="../wwr/index.html">WWR</a>
-                <a href="../ice.html">ICE</a>
+                <a href="/wwr/index.html">WWR</a>
+                <a href="ice.html">ICE</a>
                 <a href="">About Me</a>
             </nav>
         </header>
@@ -78,15 +78,5 @@
         </footer>
     </div>
 </body>
-
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        fetch("nav.html")
-            .then(Response => response.text)
-            .then(data => {
-                document.getElementById("nav").innerHTML = data;
-            });
-    })
-</script>
 
 </html>
